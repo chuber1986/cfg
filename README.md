@@ -1,0 +1,2 @@
+# cfg
+Dot-file repository.
