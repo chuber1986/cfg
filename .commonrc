@@ -1,0 +1,44 @@
+# set default editor
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/less'
+
+# use histr for search hitrory
+export HISTFILE=~/.zsh_history  # ensure history file visibility 
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
+
+# some usefull aliases
+alias config='/usr/bin/git --git-dir=/system/user/huber/.cfg/ --work-tree=/system/user/huber'
+alias cp='rsync -ah --stats "--info=progress2"'
+alias untar='tar -xvzf'
+alias c='clear'
+alias .='source' 
+
+# aliases to scripts
+SCRIPTS='$HOME/Scripts'
+alias gputop='python2.7 $SCRIPTS/gputop.py'
+
+alias startJupyther=$SCRIPTS/startJupyter.sh
+alias startTensorboard=$SCRIPTS/startTensorboard.sh
+alias startVNC=$SCRIPTS/startVNC.sh
+alias stopJupyther=$SCRIPTS/stopJupyter.sh
+alias stopTensorboard=$SCRIPTS/stopTensorboard.sh
+alias stopVNC=$SCRIPTS/stopVNC.sh
+
+# setup the conda
+export CONDA_ENVS_PATH=/system/apps/userenv/huber
+source $CONDA_ENVS_PATH/miniconda/bashrc
+source activate py37_pytorch
+alias wpy='which python'
+
+# install software from biosoft
+BIOSOFT='/system/apps/biosoft'
+
+# setup CUDA
+source $BIOSOFT/cuda-9.2/bashrc
+source $BIOSOFT/cudnn-7.1_cuda9.2/bashrc
+
+# options for MKL (just trust me, these make sense) 
+export OMP_NUM_THREADS=1
+export MKL_THREADING_LAYER=SEQUENTIAL
+
