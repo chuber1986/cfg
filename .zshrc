@@ -133,6 +133,11 @@ alias ohmyzsh="vim $HOME/.oh-my-zsh"
 # User specific aliases and functions
 source $HOME/.tmux/tmux-powerline-theme/powerline-theme.tmux
 
+# add this configuration to ~/.zshrc
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
+
 # config shell unspecific stuff
 source ~/.commonrc
 
