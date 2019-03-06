@@ -62,6 +62,7 @@ plugins=(
   tmux
   git
   ssh
+  z
 )
 
 # ssh completition
