@@ -5,7 +5,7 @@ export VISUAL='/usr/bin/less'
 # some usefull aliases
 alias config='/usr/bin/git --git-dir=/system/user/huber/.cfg/ --work-tree=/system/user/huber'
 alias cp='rsync -ah --stats "--info=progress2"'
-alias untar='tar -xvzf'
+alias untar='tar xvzf'
 alias c='clear'
 alias .='source' 
 
@@ -25,12 +25,14 @@ source /system/apps/userenv/miniconda3/bashrc
 conda activate py37_pytorch
 alias wpy='which python'
 
+export DISPLAY=:0
+
 # install software from biosoft
 BIOSOFT='/system/apps/biosoft'
 
 # setup CUDA
-source $BIOSOFT/cuda-9.2/bashrc
-source $BIOSOFT/cudnn-7.1_cuda9.2/bashrc
+# source $BIOSOFT/cuda-9.2/bashrc
+# source $BIOSOFT/cudnn-7.1_cuda9.2/bashrc
 
 # options for MKL (just trust me, these make sense) 
 export OMP_NUM_THREADS=1
