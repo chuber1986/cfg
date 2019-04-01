@@ -22,7 +22,7 @@ alias stopVNC=$SCRIPTS/stopVNC.sh
 
 # setup the conda
 source /system/apps/userenv/miniconda3/bashrc
-conda activate py37_pytorch
+
 alias wpy='which python'
 
 export DISPLAY=:0
