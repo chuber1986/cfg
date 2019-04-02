@@ -57,11 +57,9 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   common-aliases
   zsh-autosuggestions  # See https://github.com/zsh-users/zsh-autosuggestions
-  conda-zsh-completion # See https://github.com/esc/conda-zsh-completion
   sudo
   tmux
   git
-  ssh
   z
 )
 
@@ -79,7 +77,11 @@ if [[ $#h -gt 0 ]]; then
 fi
 
 # conda completition
+fpath+=$ZSH/custom/plugins/conda-zsh-completion
+export fpath
+
 zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
 
 # powerlevel9k style
 DEFAULT_USER=$USER
@@ -110,6 +112,7 @@ ZSH_TMUX_AUTOQUIT=true
 ZSH_TMUX_AUTOCONNECT=true
 
 source $ZSH/oh-my-zsh.sh
+compinit conda
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
